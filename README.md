@@ -168,24 +168,6 @@ Frontend will open at: **http://localhost:3000**
 
 ---
 
-## 📸 Screenshots
-
-### Login Page
-
-- Demo User and Demo Admin quick login buttons
-- JWT-based secure authentication
-
-### User Dashboard
-- View available tables
-- Make new bookings
-- Manage existing reservations
-
-### Admin Dashboard
-- Overview of all bookings
-- Manage tables and users
-
----
-
 ## 👥 Sample Users
 
 | Name | Email | Password | Role |
@@ -231,7 +213,7 @@ node config/seed.js
 ![Admin Dashboard](screenshots/admindashboard.png)
 
 ### 📅 Make Your Booking
-![Make Booking](screenshots/make-your-booking.png)
+![Make Booking](screenshots/make your booking.png)
 
 ### ✅ Confirm Reservation
 ![Confirm Reservation](screenshots/confirm-reservation.png)
