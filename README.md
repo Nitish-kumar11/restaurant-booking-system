@@ -223,6 +223,8 @@ node config/seed.js
 
 ### 📋 Manage Users
 ![Manage Users](screenshots/Manage-users.png)
+![Manage Users](screenshots/Manage-users.png)
+
 
 ---
 
