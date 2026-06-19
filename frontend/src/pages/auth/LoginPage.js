@@ -28,24 +28,51 @@ const LoginPage = () => {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.glow1}></div>
+      <div className={styles.glow2}></div>
+      <div className={styles.diagLine1}></div>
+      <div className={styles.diagLine2}></div>
+      <div className={styles.diagLine3}></div>
+
+      <div className={styles.brandStrip}>
+        <div className={styles.brandStripIcon}>🍛</div>
+        <div className={styles.brandStripName}>Spice of India</div>
+      </div>
+
       <div className={styles.left}>
-        <div className={styles.brand}>
-          <div className={styles.ornament}>✦ ॐ ✦</div>
-          <h1>Spice of India</h1>
-          <p>Authentic Indian Cuisine Since 2002</p>
-          <div className={styles.features}>
-            <div className={styles.feature}>🪑 Reserve Tables Online</div>
-            <div className={styles.feature}>🍛 Explore Authentic Cuisine</div>
-            <div className={styles.feature}>🎉 Celebrate Special Occasions</div>
-            <div className={styles.feature}>📋 Manage Your Bookings</div>
+        <div className={styles.foodCluster}>
+          <span className={`${styles.sparkle} ${styles.sparkle1}`}>✦</span>
+          <span className={`${styles.sparkle} ${styles.sparkle2}`}>✦</span>
+          <span className={`${styles.sparkle} ${styles.sparkle3}`}>✦</span>
+
+          <div className={`${styles.foodCircle} ${styles.foodCircle1}`}>
+            <img
+              src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&q=80"
+              alt="Indian curry"
+            />
+          </div>
+          <div className={`${styles.foodCircle} ${styles.foodCircle2}`}>
+            <img
+              src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=300&q=80"
+              alt="Dessert"
+            />
+          </div>
+          <div className={`${styles.foodCircle} ${styles.foodCircle3}`}>
+            <img
+              src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=300&q=80"
+              alt="Indian thali"
+            />
           </div>
         </div>
       </div>
 
       <div className={styles.right}>
         <div className={styles.card}>
-          <h2 className={styles.title}>Welcome Back</h2>
-          <p className={styles.sub}>Sign in to your account</p>
+          <div className={styles.eyebrow}>Welcome to Spice of India</div>
+          <h2 className={styles.title}>
+            Craving <span>something</span> good?
+          </h2>
+          <p className={styles.sub}>Sign in to reserve your table</p>
 
           <div className={styles.demoButtons}>
             <button className={styles.demoBtn} onClick={() => fillDemo("user")}>
@@ -66,7 +93,7 @@ const LoginPage = () => {
                 type="email"
                 value={form.email}
                 required
-                placeholder="Email@example.com"
+                placeholder="you@example.com"
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
               />
             </div>
