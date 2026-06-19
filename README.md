@@ -219,10 +219,10 @@ node config/seed.js
 ![Confirm Reservation](screenshots/confirm-reservation.png)
 
 ### 📋 Manage Reservation
-![Manage Reservation](screenshots/manage-reservation.png)
+![Manage Reservation](screenshots/Manage-reservation.png)
 
-### 📋 Manage Reservation
-![Manage Users](screenshots/manage-users.png)
+### 📋 Manage Users
+![Manage Users](screenshots/Manage-users.png)
 
 ---
 
