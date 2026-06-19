@@ -50,7 +50,7 @@ const RegisterPage = () => {
 
       <div className={styles.right}>
         <div className={styles.card}>
-          <h2 className={styles.title}>Create Account</h2>
+          <h2 className={styles.title}>Create nesw Account</h2>
           <p className={styles.sub}>Start reserving tables today</p>
 
           <form onSubmit={handleSubmit} className={styles.form}>
