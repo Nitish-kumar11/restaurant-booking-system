@@ -210,19 +210,19 @@ node config/seed.js
 ![Login](screenshots/login.png)
 
 ### 🏠 Admin Dashboard
-![Admin Dashboard](screenshots/admindashboard.png)
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ### 📅 Make Your Booking
-![Make Booking](screenshots/makeyourbooking.png)
+![Make Booking](screenshots/makey-our-booking.png)
 
 ### ✅ Confirm Reservation
-![Confirm Reservation](screenshots/confirmreservation.png)
+![Confirm Reservation](screenshots/confirm-reservation.png)
 
 ### 📋 Manage Reservation
-![Manage Reservation](screenshots/managereservation.png)
+![Manage Reservation](screenshots/manage-reservation.png)
 
 ### 📋 Manage Reservation
-![Manage Users](screenshots/manageusers.png)
+![Manage Users](screenshots/manage-users.png)
 
 ---
 
