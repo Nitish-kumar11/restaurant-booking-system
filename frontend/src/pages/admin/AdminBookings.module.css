@@ -1,0 +1,52 @@
+.page { display: flex; flex-direction: column; gap: 1.25rem; }
+.headerRow { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
+.title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--maroon); }
+.subtitle { font-size: 0.85rem; color: var(--text-muted); margin-top: 2px; }
+
+.filterSelect {
+  padding: 8px 14px; border: 1.5px solid var(--border); border-radius: 10px;
+  font-size: 0.85rem; background: #fff; color: var(--text-dark);
+}
+
+.cardsList { display: flex; flex-direction: column; gap: 12px; }
+.bookingCard {
+  background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+  padding: 1.1rem 1.25rem; transition: box-shadow 0.2s;
+}
+.bookingCard:hover { box-shadow: var(--shadow); }
+
+.cardTop { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+.bookingId { font-size: 0.72rem; color: var(--text-muted); font-family: monospace; }
+.customerName { font-weight: 600; font-size: 0.98rem; color: var(--text-dark); margin-top: 2px; }
+.customerMeta { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.badge { font-size: 0.72rem; font-weight: 600; padding: 5px 12px; border-radius: 20px; white-space: nowrap; }
+
+.detailsGrid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px;
+  background: var(--cream); border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+}
+.detailsGrid > div { display: flex; flex-direction: column; gap: 2px; font-size: 0.85rem; color: var(--text-dark); font-weight: 500; }
+.detailLabel { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+
+.occasionTag { display: inline-block; background: var(--saffron-light); color: var(--saffron-dark); font-size: 0.72rem; padding: 3px 10px; border-radius: 20px; margin-top: 6px; }
+.requests { font-size: 0.82rem; color: var(--text-mid); margin-top: 8px; background: var(--cream); padding: 8px 12px; border-radius: 8px; }
+
+.actions { display: flex; gap: 8px; margin-top: 1rem; flex-wrap: wrap; }
+.actions button {
+  border: none; border-radius: 8px; padding: 7px 14px; font-size: 0.78rem; font-weight: 600;
+  transition: opacity 0.2s;
+}
+.actions button:hover { opacity: 0.85; }
+.btnConfirm  { background: var(--green-light); color: var(--green); }
+.btnComplete { background: var(--blue-light); color: var(--blue); }
+.btnCancel   { background: var(--red-light); color: var(--red); }
+
+.pagination { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1rem; }
+.pagination button {
+  padding: 7px 16px; border: 1.5px solid var(--border); border-radius: 8px; background: #fff;
+  font-size: 0.82rem; color: var(--text-mid);
+}
+.pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
+.pagination span { font-size: 0.82rem; color: var(--text-muted); }
+
+.empty, .loading { text-align: center; padding: 3rem; color: var(--text-muted); background: var(--white); border-radius: 14px; }

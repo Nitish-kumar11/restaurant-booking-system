@@ -1,0 +1,41 @@
+.page { display: flex; flex-direction: column; gap: 1.25rem; }
+.headerRow { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
+.title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--maroon); }
+.subtitle { font-size: 0.85rem; color: var(--text-muted); margin-top: 2px; }
+
+.search {
+  padding: 9px 16px; border: 1.5px solid var(--border); border-radius: 10px;
+  font-size: 0.85rem; min-width: 240px; background: #fff;
+}
+.search:focus { border-color: var(--saffron); outline: none; }
+
+.tableWrap { background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.table th {
+  text-align: left; padding: 12px 16px; color: var(--text-muted);
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--border); white-space: nowrap;
+}
+.table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-dark); white-space: nowrap; }
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover { background: var(--cream); }
+
+.userCell { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.avatar {
+  width: 30px; height: 30px; border-radius: 50%; background: var(--saffron);
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+}
+
+.center { text-align: center; }
+.countBadge { background: var(--saffron-light); color: var(--saffron-dark); font-weight: 600; padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; }
+
+.statusBadge { font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+.active   { background: var(--green-light); color: var(--green); }
+.disabled { background: var(--red-light); color: var(--red); }
+
+.toggleBtn { border: none; padding: 6px 14px; border-radius: 8px; font-size: 0.78rem; font-weight: 600; }
+.toggleDisable { background: var(--red-light); color: var(--red); }
+.toggleEnable  { background: var(--green-light); color: var(--green); }
+
+.empty, .loading { text-align: center; padding: 3rem; color: var(--text-muted); background: var(--white); border-radius: 14px; }

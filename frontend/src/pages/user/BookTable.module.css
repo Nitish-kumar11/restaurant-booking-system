@@ -1,0 +1,82 @@
+.page { max-width: 800px; }
+.title { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--maroon); margin-bottom: 1.5rem; }
+.subtitle { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem; }
+.loading { color: var(--text-muted); font-size: 0.88rem; padding: 1rem 0; }
+
+.steps {
+  display: flex; align-items: center; margin-bottom: 2rem; gap: 0;
+}
+.step { display: flex; align-items: center; gap: 8px; }
+.stepNum {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 2px solid var(--border); display: flex; align-items: center;
+  justify-content: center; font-size: 0.8rem; font-weight: 600;
+  color: var(--text-muted); background: #fff; flex-shrink: 0; transition: all 0.3s;
+}
+.stepNum.active { border-color: var(--saffron); background: var(--saffron); color: #fff; }
+.stepNum.done   { border-color: var(--green);   background: var(--green);   color: #fff; }
+.stepLabel { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+.activeLabel { color: var(--saffron); font-weight: 600; }
+.stepLine { flex: 1; height: 2px; background: var(--border); margin: 0 8px; transition: background 0.3s; }
+.lineDone { background: var(--green); }
+
+.card {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.75rem; box-shadow: var(--shadow);
+}
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 0.78rem; font-weight: 600; color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.5px; }
+.field input, .field select, .field textarea {
+  padding: 10px 14px; border: 1.5px solid var(--border);
+  border-radius: 10px; font-size: 0.92rem; background: #fff; color: var(--text-dark); transition: all 0.2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--saffron); box-shadow: 0 0 0 3px rgba(232,131,42,0.12);
+}
+.field textarea { resize: vertical; font-family: 'Inter', sans-serif; }
+
+.btn {
+  background: var(--saffron); color: #fff; border: none; border-radius: 10px;
+  padding: 11px 24px; font-size: 0.9rem; font-weight: 600; transition: all 0.2s; margin-top: 1.25rem;
+}
+.btn:hover    { background: var(--saffron-dark); transform: translateY(-1px); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.btnOutline {
+  background: transparent; color: var(--saffron); border: 1.5px solid var(--saffron);
+  border-radius: 10px; padding: 11px 24px; font-size: 0.9rem; font-weight: 600; transition: all 0.2s;
+}
+.btnOutline:hover { background: var(--saffron-light); }
+.btnRow { display: flex; gap: 10px; margin-top: 1.25rem; }
+.btnRow .btn, .btnRow .btnOutline { margin-top: 0; flex: 1; }
+
+.tablesGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+.tableCard {
+  border: 2px solid var(--border); border-radius: 14px; padding: 1rem;
+  text-align: center; transition: all 0.2s; cursor: pointer;
+}
+.tableCard.available:hover { border-color: var(--saffron); transform: translateY(-2px); box-shadow: var(--shadow); }
+.tableCard.booked   { opacity: 0.5; cursor: not-allowed; background: #fafafa; }
+.tableCard.selected { border-color: var(--saffron); background: var(--saffron-light); box-shadow: 0 0 0 3px rgba(232,131,42,0.15); }
+.tableIcon  { font-size: 2rem; display: block; margin-bottom: 6px; }
+.tableNum   { font-weight: 700; font-size: 0.9rem; }
+.tableSub   { font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; }
+.tableStatus { font-size: 0.68rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; margin-top: 6px; display: inline-block; }
+.statusFree     { background: var(--green-light); color: var(--green); }
+.statusBooked   { background: var(--red-light);   color: var(--red);   }
+.statusSelected { background: var(--gold-light);  color: var(--gold);  }
+
+.summary {
+  background: linear-gradient(135deg, #3D1C00, #6B3400);
+  border-radius: 14px; padding: 1.5rem; margin-bottom: 0.5rem;
+}
+.summary h3 { font-family: 'Playfair Display', serif; color: #E8C57A; margin-bottom: 1rem; font-size: 1.1rem; }
+.summaryRow {
+  display: flex; justify-content: space-between; padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.88rem;
+}
+.summaryRow:last-child { border-bottom: none; }
+.summaryRow span:first-child { color: #C9A87A; }
+.summaryRow span:last-child  { color: #fff; font-weight: 500; text-align: right; max-width: 55%; }
+
+@media (max-width: 600px) { .formGrid { grid-template-columns: 1fr; } }
