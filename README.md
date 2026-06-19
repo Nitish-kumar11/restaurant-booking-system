@@ -213,7 +213,7 @@ node config/seed.js
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ### 📅 Make Your Booking
-![Make Booking](screenshots/makey-our-booking.png)
+![Make Booking](screenshots/make-your-booking.png)
 
 ### ✅ Confirm Reservation
 ![Confirm Reservation](screenshots/confirm-reservation.png)
