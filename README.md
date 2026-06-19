@@ -196,7 +196,10 @@ Frontend will open at: **http://localhost:3000**
 | Saurav | saurav@gmail.com | user123 | User |
 | Sameer | sameer@gmail.com | user123 | User |
 | Aryan | aryan@gmail.com | user123 | User |
-
+| Ravi | ravi@gmail.com | user123 | User |
+| Suraj | suraj@gmail.com | user123 | User |
+| Shivang | shivang@gmail.com | user123 | User |
+| Nicky | nicky@gmail.com | user123 | User |
 ---
 
 ## 🐛 Common Issues & Fixes
