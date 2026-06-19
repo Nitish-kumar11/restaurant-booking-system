@@ -222,6 +222,25 @@ cd backend
 node config/seed.js
 ```
 
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login](screenshots/login.png)
+
+### 🏠 Admin Dashboard
+![Admin Dashboard](screenshots/admindashboard.png)
+
+### 📅 Make Your Booking
+![Make Booking](screenshots/make-your-booking.png)
+
+### ✅ Confirm Reservation
+![Confirm Reservation](screenshots/confirm-reservation.png)
+
+### 📋 Manage Reservation
+![Manage Reservation](screenshots/manage-reservation.png)
+
+### 👥 Admin - Manage Users
+![Manage Users](screenshots/manage-users.png)
 ---
 
 
