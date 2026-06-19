@@ -1,181 +1,233 @@
-# 🍛 Spice of India — Restaurant Table Booking System
+# 🍛 Spice of India - Restaurant Booking System
 
-A full-stack **MERN** (MongoDB, Express, React, Node.js) application for booking restaurant tables online, with separate **Customer** and **Admin** portals.
+A full-stack **MERN** (MongoDB, Express, React, Node.js) restaurant table booking web application for **Spice of India** restaurant. Users can register, browse tables, make bookings, and manage their reservations. Admins can manage all bookings, tables, and users.
+
+---
+
+## 🌐 Live Demo
+
+> Run locally at: `http://localhost:3000`
+
+**Demo Credentials:**
+
+| Role  | Email | Password |
+|-------|-------|----------|
+| Admin | nitish@spiceofindia.com | nitish123 |
+| User  | jagriti@gmail.com | user123 |
 
 ---
 
 ## ✨ Features
 
-### Customer Side
-- Register / Login (JWT auth)
-- Dashboard with booking stats
-- 3-step table reservation flow (details → choose table → confirm)
-- Live table availability by date & time slot
-- View / cancel own bookings
-- Edit profile & change password
+### 👤 User
+- Register & Login securely with JWT authentication
+- Browse available restaurant tables
+- Book a table by date, time, and number of guests
+- View and manage personal bookings
+- Update profile information
 
-### Admin Side
-- Separate admin login & dashboard
-- Stats overview + 7-day bookings chart
-- View / confirm / complete / cancel any booking
-- Manage tables (add / edit / activate / deactivate)
-- Manage customers (view, enable/disable accounts)
+### 🔧 Admin
+- View all bookings across all users
+- Manage restaurant tables (add, edit, delete)
+- View and manage all registered users
+- Access admin dashboard with overview stats
 
 ---
 
-## 🗂 Project Structure
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React.js, React Router, CSS Modules |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas (Mongoose) |
+| Auth | JWT (JSON Web Tokens), bcryptjs |
+| Notifications | React Hot Toast |
+
+---
+
+## 📁 Project Structure
 
 ```
 restaurant-booking/
-├── backend/                   # Node + Express + MongoDB API
+├── backend/
 │   ├── config/
-│   │   ├── db.js              # MongoDB connection
-│   │   └── seed.js            # Seeds admin/users/tables
-│   ├── controllers/           # Route logic
+│   │   └── seed.js           # Database seeder
+│   ├── controllers/
+│   │   └── authController.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Table.js
+│   │   └── Booking.js
+│   ├── routes/
 │   ├── middleware/
-│   │   └── authMiddleware.js  # JWT protect + adminOnly
-│   ├── models/                # User, Table, Booking (Mongoose)
-│   ├── routes/                # /api/auth, /tables, /bookings, /admin
-│   ├── .env.example
-│   ├── package.json
-│   └── server.js
-│
-└── frontend/                  # React app
-    ├── public/
-    └── src/
-        ├── components/
-        │   ├── admin/AdminLayout.js   # Admin sidebar + shell
-        │   └── user/UserLayout.js     # Customer sidebar + shell
-        ├── context/
-        │   └── AuthContext.js         # Global auth state
-        ├── pages/
-        │   ├── auth/      (Login, Register)
-        │   ├── user/      (Dashboard, BookTable, MyBookings, Profile)
-        │   └── admin/     (Dashboard, Bookings, Tables, Users)
-        ├── utils/
-        │   └── api.js     # Axios instance with JWT interceptor
-        ├── App.js         # Routes
-        └── index.js
+│   ├── server.js
+│   └── .env
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── context/
+│       │   └── AuthContext.js
+│       ├── pages/
+│       │   ├── auth/
+│       │   │   ├── LoginPage.js
+│       │   │   └── RegisterPage.js
+│       │   ├── user/
+│       │   │   ├── UserDashboard.js
+│       │   │   ├── BookTable.js
+│       │   │   ├── MyBookings.js
+│       │   │   └── UserProfile.js
+│       │   └── admin/
+│       │       ├── AdminDashboard.js
+│       │       ├── AdminBookings.js
+│       │       ├── AdminTables.js
+│       │       └── AdminUsers.js
+│       └── App.js
+└── README.md
 ```
 
 ---
 
-## 🚀 Setup Instructions
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js v18+
-- MongoDB running locally (or a MongoDB Atlas URI)
 
-### 1. Backend Setup
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/)
+- [MongoDB Atlas](https://www.mongodb.com/atlas) account
+
+---
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/restaurant-booking-mern.git
+cd restaurant-booking-mern/restaurant-booking
+```
+
+---
+
+### 2. Setup Backend
 
 ```bash
 cd backend
 npm install
-cp .env.example .env
 ```
 
-Edit `.env` if needed (default works for local MongoDB):
-```
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/restaurant_booking
-JWT_SECRET=spiceofindia_jwt_secret_key_2024
+Create a `.env` file in the `backend` folder:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
 JWT_EXPIRE=7d
+PORT=5000
 ```
 
-Seed the database with an admin account, sample users, and 12 tables:
+---
+
+### 3. Seed the Database
+
 ```bash
-npm run seed
+node config/seed.js
 ```
 
-Start the backend:
+This will create:
+- 1 Admin user
+- 9 Sample users
+- 12 Restaurant tables
+
+---
+
+### 4. Start Backend
+
 ```bash
-npm run dev
+npm start
 ```
-Backend runs on **http://localhost:5000**
 
-### 2. Frontend Setup
+You should see:
+```
+🚀 Server running on port 5000
+✅ MongoDB Connected
+```
 
-Open a **new terminal**:
+---
+
+### 5. Setup Frontend
+
+Open a new terminal:
+
 ```bash
 cd frontend
 npm install
 npm start
 ```
-Frontend runs on **http://localhost:3000** (proxies API calls to port 5000 automatically).
+
+Frontend will open at: **http://localhost:3000**
 
 ---
 
-## 🔑 Demo Login Credentials
+## 📸 Screenshots
 
-| Role  | Email                     | Password   |
-|-------|---------------------------|------------|
-| Admin | admin@spiceofindia.com    | admin123   |
-| User  | arjun@gmail.com           | user123    |
-| User  | priya@gmail.com           | user123    |
-| User  | rahul@gmail.com           | user123    |
+### Login Page
 
-(The login page also has "Demo User" / "Demo Admin" buttons that autofill these.)
+- Demo User and Demo Admin quick login buttons
+- JWT-based secure authentication
 
----
+### User Dashboard
+- View available tables
+- Make new bookings
+- Manage existing reservations
 
-## 🛠 Tech Stack
-
-- **Frontend:** React 18, React Router v6, Axios, Recharts, react-hot-toast, CSS Modules
-- **Backend:** Node.js, Express, MongoDB, Mongoose
-- **Auth:** JWT (jsonwebtoken) + bcryptjs password hashing
+### Admin Dashboard
+- Overview of all bookings
+- Manage tables and users
 
 ---
 
-## 📡 API Reference
+## 👥 Sample Users
 
-### Auth — `/api/auth`
-| Method | Route        | Access  | Description          |
-|--------|--------------|---------|-----------------------|
-| POST   | /register    | Public  | Create account         |
-| POST   | /login       | Public  | Login, get JWT         |
-| GET    | /me          | Private | Get current user       |
-| PUT    | /profile     | Private | Update name/phone      |
-| PUT    | /password    | Private | Change password        |
-
-### Tables — `/api/tables`
-| Method | Route | Access  | Description       |
-|--------|-------|---------|--------------------|
-| GET    | /     | Private | List active tables |
-
-### Bookings — `/api/bookings`
-| Method | Route             | Access  | Description                      |
-|--------|-------------------|---------|------------------------------------|
-| POST   | /                 | Private | Create a booking                   |
-| GET    | /my               | Private | Get my bookings                    |
-| GET    | /availability     | Private | Check tables free for date+time    |
-| PUT    | /:id/cancel       | Private | Cancel my booking                  |
-
-### Admin — `/api/admin` (admin role only)
-| Method | Route                    | Description                  |
-|--------|--------------------------|-------------------------------|
-| GET    | /dashboard               | Stats + chart + recent bookings |
-| GET    | /bookings                | All bookings (paginated, filterable) |
-| PUT    | /bookings/:id/status     | Update booking status          |
-| GET    | /users                   | All customers + booking counts |
-| PUT    | /users/:id/toggle        | Enable/disable a customer      |
-| GET    | /tables                  | All tables (incl. inactive)    |
-| POST   | /tables                  | Create table                   |
-| PUT    | /tables/:id              | Update table                   |
-| DELETE | /tables/:id              | Deactivate table                |
+| Name | Email | Password | Role |
+|------|-------|----------|------|
+| Nitish Kumar | nitish@spiceofindia.com | nitish123 | Admin |
+| Jagriti | jagriti@gmail.com | user123 | User |
+| Deepak | deepak@gmail.com | user123 | User |
+| Saurav | saurav@gmail.com | user123 | User |
+| Sameer | sameer@gmail.com | user123 | User |
+| Aryan | aryan@gmail.com | user123 | User |
 
 ---
 
-## 📝 Notes for Your Internship Submission
+## 🐛 Common Issues & Fixes
 
-- All passwords are hashed with bcrypt before storing — never stored in plain text.
-- Routes are protected with JWT middleware (`protect`) and role-checking (`adminOnly`).
-- Table double-booking is prevented server-side (`isTableTaken` check in `bookingController.js`).
-- The UI uses CSS Modules (scoped styles) — no class name collisions between pages.
-- To reset all data, just re-run `npm run seed` in `/backend`.
+### Port already in use
+```bash
+netstat -ano | findstr :5000
+taskkill /PID <PID_NUMBER> /F
+```
 
-### Suggested next steps if you want to extend this further
-- Add email/SMS confirmation (e.g. Nodemailer or Twilio)
-- Add image uploads for table photos (Multer + Cloudinary)
-- Add a Socket.io layer for real-time table-status updates across users
-- Add pagination to "My Bookings" once a user has many bookings
-- Deploy: backend → Render/Railway, frontend → Vercel/Netlify, DB → MongoDB Atlas
+### react-scripts not found
+```bash
+cd frontend
+npm install
+```
+
+### Login failed / Invalid credentials
+```bash
+cd backend
+node config/seed.js
+```
+
+---
+
+
+## 🙏 Acknowledgements
+
+- Built with ❤️ for **Spice of India** restaurant
+- Authentic Indian Cuisine Since 2002
+- MERN Stack Project
+
+---
+
+> Made by **Nitish Kumar** 
